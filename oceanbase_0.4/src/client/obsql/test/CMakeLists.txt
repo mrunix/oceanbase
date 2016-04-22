@@ -3,7 +3,7 @@ SET(OBSQL_TEST_CXX_FLAGS  "${COMMON_CXXFLAGS}")
 SET(OBSQL_TEST_LIBRARIES
 	${SYSLIBS}
 	${TBSYSLIB}
-	obsql.static
+	obsql${LIB_TYPE}
 	common.static
 	mysqlclient
 	curl
