@@ -1,2 +1,6 @@
 # Ignore subversion meta directories
 .svn/
+external/
+out/
+svn_version.cpp
+svn_version.c

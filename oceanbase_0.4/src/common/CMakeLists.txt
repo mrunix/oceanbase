@@ -1,0 +1,213 @@
+
+ADD_SUBDIRECTORY(btree)
+ADD_SUBDIRECTORY(compress)
+ADD_SUBDIRECTORY(roottable)
+ADD_SUBDIRECTORY(timezone)
+
+SET(common_sources
+	base_main.cpp
+	batch_packet_queue_thread.cpp
+	bloom_filter.cpp
+	dlist.cpp
+	file_directory_utils.cpp
+	file_utils.cpp
+	futex_sem.cpp
+	ob_fifo_allocator.cpp
+	ob_packet_lighty_queue.cpp
+	murmur_hash.cpp
+	ob_array_lock.cpp
+	ob_base_client.cpp
+	ob_base_server.cpp
+	ob_bypass_task_info.cpp
+	ob_cache.cpp
+	ob_cell_array.cpp
+	ob_check_runnable.cpp
+	ob_client_helper.cpp
+	ob_client_manager.cpp
+	ob_client_proxy.cpp
+	ob_client_wait_obj.cpp
+	ob_common_param.cpp
+	ob_common_rpc_stub.cpp
+	ob_compact_cell_iterator.cpp
+	ob_compact_cell_util.cpp
+	ob_compact_cell_writer.cpp
+	ob_compose_operator.cpp
+	ob_composite_column.cpp
+	ob_cond_info.cpp
+	ob_counter.cpp
+	ob_crc64.cpp
+	ob_cur_time.cpp
+	ob_decimal_helper.cpp
+	ob_direct_log_reader.cpp
+	ob_easy_log.cpp
+	ob_encrypt.cpp
+	ob_expr_obj.cpp
+	ob_extra_tables_schema.cpp
+	ob_fetch_runnable.cpp
+	ob_file.cpp
+	ob_file_client.cpp
+	ob_file_service.cpp
+	ob_flag.cpp
+	ob_get_param.cpp
+	ob_groupby.cpp
+	ob_groupby_operator.cpp
+	ob_hint.cpp
+	ob_infix_expression.cpp
+	ob_lease_common.cpp
+	ob_lighty_queue.cpp
+	ob_log_cursor.cpp
+	ob_log_dir_scanner.cpp
+	ob_log_entry.cpp
+	ob_log_generator.cpp
+	ob_log_reader.cpp
+	ob_log_replay_runnable.cpp
+	ob_log_writer.cpp
+	ob_log_writer2.cpp
+	ob_log_data_writer.cpp
+	ob_login_mgr.cpp
+	ob_malloc.cpp
+	ob_memory_pool.cpp
+	ob_merger.cpp
+	ob_meta_cache.cpp
+	ob_mod_define.cpp
+	ob_ms_list.cpp
+	ob_mutator.cpp
+	ob_mutator_helper.cpp
+	ob_mutex_task.cpp
+	ob_new_scanner.cpp
+	ob_new_scanner_helper.cpp
+	ob_number.cpp
+	ob_obi_role.cpp
+	ob_obj_cast.cpp
+	ob_object.cpp
+	ob_obj_type.cpp
+	ob_packet.cpp
+	ob_packet_queue.cpp
+	ob_packet_queue_thread.cpp
+	ob_perm_components.cpp
+	ob_pool.ipp
+	ob_postfix_expression.cpp
+	ob_privilege.cpp
+	ob_privilege_manager.cpp
+	ob_privilege_type.cpp
+	ob_probability_random.cpp
+	ob_range.cpp
+	ob_range2.cpp
+	ob_raw_row.cpp
+	ob_record_header.cpp
+	ob_record_header_v2.cpp
+	ob_regex.cpp
+	ob_repeated_log_reader.cpp
+	ob_return_operator.cpp
+	ob_ring_buffer.cpp
+	ob_row.cpp
+	ob_row_compaction.cpp
+	ob_row_desc.cpp
+	ob_row_desc_ext.cpp
+	ob_row_fuse.cpp
+	ob_row_store.cpp
+	ob_row_util.cpp
+	ob_rowkey.cpp
+	ob_rowkey_helper.cpp
+	ob_rs_ups_message.cpp
+	ob_scan_param.cpp
+	ob_scanner.cpp
+	ob_schema.cpp
+	ob_schema_helper.cpp
+	ob_schema_manager.cpp
+	ob_schema_service.cpp
+	ob_schema_service_impl.cpp
+	ob_schema_table.cpp
+	ob_seq_queue.cpp
+	ob_server.cpp
+	ob_server_ext.cpp
+	ob_server_getter.cpp
+	ob_session_mgr.cpp
+	ob_shadow_server.cpp
+	ob_simple_condition.cpp
+	ob_simple_filter.cpp
+	ob_single_log_reader.cpp
+	ob_single_server.cpp
+	ob_slab.cpp
+	ob_slave_mgr.cpp
+	ob_spop_spush_queue.cpp
+	ob_tsi_utils.cpp
+	ob_stack_allocator.cpp
+	ob_ack_queue.cpp
+	ob_ticket_queue.cpp
+	ob_statistics.cpp
+	ob_common_stat.cpp
+	ob_string_buf.ipp
+	ob_string_search.cpp
+	ob_strings.cpp
+	ob_table_id_name.cpp
+	ob_tablet_info.cpp
+	ob_tbnet_callback.cpp
+	ob_thread_mempool.cpp
+	ob_timer.cpp
+	ob_token.cpp
+	ob_trace_log.cpp
+	ob_tsi_factory.cpp
+	ob_ups_info.cpp
+	ob_ups_row.cpp
+	ob_ups_row_util.cpp
+	ob_vector.ipp
+	priority_packet_queue_thread.cpp
+	thread_buffer.cpp
+	utility.cpp
+	ob_rpc_stub.cpp
+	ob_general_rpc_stub.cpp
+	ob_general_rpc_proxy.cpp
+	ob_tsi_block_allocator.cpp
+	ob_pcap.cpp
+	ob_iterator_adaptor.cpp
+	ob_transaction.cpp
+	nb_accessor/ob_nb_accessor.cpp
+	nb_accessor/nb_scan_cond.cpp
+	nb_accessor/nb_query_res.cpp
+	ob_profile_log.cpp										
+	ob_trace_id.cpp
+	nb_accessor/nb_table_row.cpp
+	ob_trigger_msg.cpp
+	ob_trigger_event_util.cpp
+	ob_inner_table_operator.cpp
+	ob_encrypted_helper.cpp
+	ob_server_config.cpp
+	ob_system_config.cpp
+	ob_system_config_key.cpp
+	ob_config_manager.cpp
+	ob_config.cpp
+	ob_config_helper.cpp
+	ob_version.cpp
+	ob_profile_fill_log.cpp
+	ob_queue_thread.cpp
+	ob_libeasy_mem_pool.cpp
+	ob_balance_filter.cpp
+	ob_data_source_desc.cpp
+	ob_fifo_stream.cpp
+	ob_multi_wakeup.cpp
+	ob_errno.cpp
+)
+
+SET(location_sources
+	location/ob_tablet_location_list.cpp
+	location/ob_tablet_location_cache_proxy.cpp
+	location/ob_tablet_location_range_iterator.cpp
+	location/ob_tablet_location_cache.cpp
+)
+
+
+CLEAR_VARS()
+SET(LOCAL_MODULE     "common")
+SET(LOCAL_C_FLAGS    "${COMMON_CFLAGS} -Wno-error=psabi")	# ob_priority_scheduler.h:34:33: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+SET(LOCAL_CXX_FLAGS  "${COMMON_CXXFLAGS} -Wno-error=psabi")	# ob_priority_scheduler.h:34:33: error: AVX vector return without AVX enabled changes the ABI [-Werror=psabi]
+SET(LOCAL_CXX_FILES  ${common_sources} ${location_sources})
+SET(LOCAL_LIBRARIES
+	${SYSLIBS}
+	${EASYLIB}
+	${TBSYSLIB}
+	btree.static
+	sql.static
+)
+BUILD_STATIC_LIBRARY()
+
