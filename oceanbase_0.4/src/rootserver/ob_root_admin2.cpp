@@ -375,7 +375,7 @@ namespace oceanbase
       {
         key_num++;
       }
-      int local_num = ARRAYSIZEOF(SUB_OPTIONS);
+      int local_num = (int)(ARRAYSIZEOF(SUB_OPTIONS));
       const char** all_sub_options = new(std::nothrow) const char*[key_num+local_num];
       if (NULL == all_sub_options)
       {
@@ -731,7 +731,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
       printf("get_obi_role...\n");
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -769,7 +769,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
       printf("set_obi_role...role=%d\n", args.obi_role.get_role());
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       if (OB_SUCCESS != (ret = args.obi_role.serialize(msgbuf.get_data(), msgbuf.get_capacity(), msgbuf.get_position())))
@@ -805,7 +805,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
       printf("do_rs_admin, cmd=%d...\n", args.command.pcode);
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       // admin消息的内容为一个int32_t类型，定义在ob_root_admin_cmd.h中
@@ -842,7 +842,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
       printf("do_change_log_level, level=%d...\n", args.log_level);
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       if (Arguments::INVALID_LOG_LEVEL == args.log_level)
@@ -931,7 +931,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
       printf("get_master_ups_config...\n");
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -991,7 +991,7 @@ namespace oceanbase
             args.master_master_ups_read_percentage, args.slave_master_ups_read_percentage);
 
         static const int32_t MY_VERSION = 1;
-        const int buff_size = OB_MAX_PACKET_LENGTH;
+        const size_t buff_size = OB_MAX_PACKET_LENGTH;
         char buff[buff_size];
         ObDataBuffer msgbuf(buff, buff_size);
         if (OB_SUCCESS != (ret = serialization::encode_vi32(msgbuf.get_data(), msgbuf.get_capacity(), msgbuf.get_position(), args.master_master_ups_read_percentage)))
@@ -1048,7 +1048,7 @@ namespace oceanbase
         printf("force cs create empty table cs_ip=%s cs_port=%d version=%ld table_id=%lu...\n",
             args.rs_host, args.rs_port, args.table_version, args.table_id);
         static const int32_t MY_VERSION = 1;
-        const int buff_size = sizeof(ObPacket) + 128;
+        const size_t buff_size = sizeof(ObPacket) + 128;
         char buff[buff_size];
         ObDataBuffer msgbuf(buff, buff_size);
         ObNewRange range;
@@ -1130,7 +1130,7 @@ namespace oceanbase
             args.ups_ip, args.ups_port, args.ms_read_percentage, args.cs_read_percentage);
 
         static const int32_t MY_VERSION = 1;
-        const int buff_size = OB_MAX_PACKET_LENGTH;
+        const size_t buff_size = OB_MAX_PACKET_LENGTH;
         char buff[buff_size];
         ObDataBuffer msgbuf(buff, buff_size);
 
@@ -1175,7 +1175,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -1245,7 +1245,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -1314,7 +1314,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -1383,7 +1383,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       ObRowChecksum row_checksum;
@@ -1434,7 +1434,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
       printf("import_tablets...table_id=%lu\n", args.table_id);
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       int64_t import_version = 0;
@@ -1822,7 +1822,7 @@ namespace oceanbase
     {
       int err = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -1885,7 +1885,7 @@ namespace oceanbase
       int err = OB_SUCCESS;
       printf("for split tablet...\n");
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -1986,7 +1986,7 @@ namespace oceanbase
         }
         else
         {
-          static const int HEADER_LENGTH = sizeof (uint32_t) + sizeof (uint64_t);
+          static const size_t HEADER_LENGTH = sizeof (uint32_t) + sizeof (uint64_t);
           uint64_t length = *reinterpret_cast<uint64_t *>(msgbuf.get_data() + msgbuf.get_position() + sizeof (uint32_t));
           msgbuf.get_position() += HEADER_LENGTH;
           printf("%.*s", static_cast<int>(length), msgbuf.get_data() + msgbuf.get_position());
@@ -1998,7 +1998,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
 
@@ -2044,7 +2044,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       ObString table_name;
@@ -2113,7 +2113,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       static const int32_t MY_VERSION = 1;
-      const int buff_size = OB_MAX_PACKET_LENGTH;
+      const size_t buff_size = OB_MAX_PACKET_LENGTH;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       ObString table_name;
@@ -2177,7 +2177,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
       printf("force to create table for emergency, table_id=%ld\n", args.table_id);
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       if (OB_SUCCESS != (ret = serialization::encode_vi64(msgbuf.get_data(), msgbuf.get_capacity(), msgbuf.get_position(), args.table_id)))
@@ -2212,7 +2212,7 @@ int do_drop_table_for_emergency(ObBaseClient &client, Arguments &args)
       int ret = OB_SUCCESS;
       printf("force to drop table for emergency, table_id=%ld\n", args.table_id);
       static const int32_t MY_VERSION = 1;
-      const int buff_size = sizeof(ObPacket) + 32;
+      const size_t buff_size = sizeof(ObPacket) + 32;
       char buff[buff_size];
       ObDataBuffer msgbuf(buff, buff_size);
       if (OB_SUCCESS != (ret = serialization::encode_vi64(msgbuf.get_data(), msgbuf.get_capacity(), msgbuf.get_position(), args.table_id)))

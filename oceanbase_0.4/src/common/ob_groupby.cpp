@@ -1200,7 +1200,7 @@ int oceanbase::common::ObGroupByParam::serialize(char* buf, const int64_t buf_le
   }
   else
   {
-    err = serialize_helper(buf,buf_len,pos);
+    err = (int)serialize_helper(buf,buf_len,pos);
     if (0 <= err)
     {
       err = OB_SUCCESS;
@@ -2109,7 +2109,7 @@ int64_t oceanbase::common::ObGroupByParam::serialize_helper(char* buf, const int
   }
   if (OB_SUCCESS == err)
   {
-    err = groupby_columns_serialize_helper(buf,buf_len,pos);
+    err = (int)groupby_columns_serialize_helper(buf,buf_len,pos);
     if (0 <= err)
     {
       need_size += err;
@@ -2117,7 +2117,7 @@ int64_t oceanbase::common::ObGroupByParam::serialize_helper(char* buf, const int
     }
     if (OB_SUCCESS == err)
     {
-      err = return_columns_serialize_helper(buf,buf_len,pos);
+      err = (int)return_columns_serialize_helper(buf,buf_len,pos);
       if (0 <= err)
       {
         need_size += err;
@@ -2126,7 +2126,7 @@ int64_t oceanbase::common::ObGroupByParam::serialize_helper(char* buf, const int
     }
     if (OB_SUCCESS == err)
     {
-      err = aggregate_columns_serialize_helper(buf,buf_len,pos);
+      err = (int)aggregate_columns_serialize_helper(buf,buf_len,pos);
       if (0 <= err)
       {
         need_size += err;

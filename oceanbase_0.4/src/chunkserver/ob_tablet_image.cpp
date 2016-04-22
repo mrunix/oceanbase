@@ -2641,7 +2641,7 @@ namespace oceanbase
     int ObMultiVersionTabletImage::get_tablets_for_merge(
         const int64_t version, int64_t &size, ObTablet *tablets[]) const
     {
-      int ret = OB_SUCCESS;
+      int __attribute__((unused)) ret = OB_SUCCESS;
 
       tbsys::CRLockGuard guard(lock_);
 
@@ -3374,7 +3374,7 @@ namespace oceanbase
         const int32_t disk_no, const char* buf, const int64_t buf_len, int64_t &pos)
     {
       int ret = OB_SUCCESS;
-      int64_t origin_payload_pos = 0;
+      int64_t __attribute__((unused)) origin_payload_pos = 0;
       ObTabletMetaHeader meta_header;
 
       if ( OB_SUCCESS != (ret = ObRecordHeader::check_record(

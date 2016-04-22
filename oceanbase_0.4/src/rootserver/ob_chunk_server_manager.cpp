@@ -496,7 +496,7 @@ namespace oceanbase
 
     int ObChunkServerManager::get_next_alive_ms(int32_t & index, ObServer & server) const
     {
-      int32_t count = size();
+      int32_t count = (int32_t)size();
       const ObServerStatus * st = NULL;
       int32_t i = 0;
       for (i = 0; i < count; ++i)

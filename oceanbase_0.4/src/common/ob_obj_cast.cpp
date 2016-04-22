@@ -899,11 +899,11 @@ namespace oceanbase
       ObString varchar;
       if (in.get_bool())
       {
-        varchar.assign_ptr(const_cast<char*>("true"), sizeof("true")-1);
+        varchar.assign_ptr(const_cast<char*>("true"), (ObString::obstr_size_t)(sizeof("true")-1));
       }
       else
       {
-        varchar.assign_ptr(const_cast<char*>("false"), sizeof("false")-1);
+        varchar.assign_ptr(const_cast<char*>("false"), (ObString::obstr_size_t)(sizeof("false")-1));
       }
       out.set_varchar(varchar);
       return OB_SUCCESS;

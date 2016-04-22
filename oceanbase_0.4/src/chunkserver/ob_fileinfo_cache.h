@@ -114,7 +114,7 @@ namespace oceanbase
       inline int32_t do_size(chunkserver::FileInfo* const &data,
                             CSFileInfoPointerDeepCopyTag)
       {
-        return (sizeof(data) + sizeof(chunkserver::FileInfo));
+        return (int32_t)(sizeof(data) + sizeof(chunkserver::FileInfo));
       }
 
       inline void do_destroy(chunkserver::FileInfo **data,

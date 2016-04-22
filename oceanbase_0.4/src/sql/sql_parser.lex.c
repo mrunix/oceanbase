@@ -2828,7 +2828,7 @@ YY_RULE_SETUP
 {
   int year, month, day;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -2865,7 +2865,7 @@ YY_RULE_SETUP
 {
   int hour, minute, second, micro_sec;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -2902,7 +2902,7 @@ YY_RULE_SETUP
 {
   int hour, minute, second;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -2939,7 +2939,7 @@ YY_RULE_SETUP
 {
   int year, month, day, hour, minute, second, micro_sec;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -2977,7 +2977,7 @@ YY_RULE_SETUP
 {
   int year, month, day, hour, minute, second;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;

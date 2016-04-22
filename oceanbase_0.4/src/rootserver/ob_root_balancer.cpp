@@ -842,7 +842,7 @@ void ObRootBalancer::check_table_rereplication(const uint64_t table_id,
           table_found = true;
         }
         // check re-replication
-        int add_ret = OB_ERROR;
+        int __attribute__((unused)) add_ret = OB_ERROR;
         if (OB_SUCCESS == nb_check_rereplication(it, ract))
         {
           if (RA_COPY == ract)
@@ -1476,7 +1476,7 @@ int ObRootBalancer::nb_trigger_next_migrate(const ObDataSourceDesc& desc, int32_
 void ObRootBalancer::do_balance()
 {
   check_components();
-  int ret = OB_SUCCESS;
+  int __attribute__((unused)) ret = OB_SUCCESS;
   int tmp_ret = OB_SUCCESS;
   if (OB_SUCCESS != (tmp_ret = restart_server_->restart_servers()))
   {
@@ -2737,7 +2737,7 @@ int ObRootBalancer::fetch_range_list(const ObDataSourceDesc::ObDataSourceType da
     }
     else
     {
-      bool flag = true;
+      bool __attribute__((unused)) flag = true;
       bool first = true;
       common::ObRowkey last_row_key;
       // check range list

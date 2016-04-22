@@ -629,7 +629,7 @@ int param_get(const char *fname, MockClient &client)
     }
     else
     {
-      read(fd, buf, st.st_size);
+      ssize_t __attribute__((unused)) ret = read(fd, buf, st.st_size);
       int64_t pos = 0;
       ObGetParam get_param;
       if (OB_SUCCESS != get_param.deserialize(buf, st.st_size, pos))

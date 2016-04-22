@@ -93,7 +93,7 @@ namespace oceanbase
     {
       int ret               = OB_SUCCESS;
       bool need_load_block  = false;
-      int64_t cell_size     = 0;
+      int64_t __attribute__((unused)) cell_size = 0;
       const ObGetParam::ObRowIndex* row_index = NULL;
 
       cur_state_ = ITERATE_NORMAL;  //reset current state first

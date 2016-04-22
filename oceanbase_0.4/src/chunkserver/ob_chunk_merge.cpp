@@ -767,7 +767,7 @@ namespace oceanbase
       // ObChunkServer&  chunk_server = ObChunkServerMain::get_instance()->get_chunk_server();
       volatile int64_t current_request_count_ = 0;
 
-      if (getloadavg(loadavg,sizeof(loadavg)/sizeof(loadavg[0])) < 0)
+      if (getloadavg(loadavg, (int)(sizeof(loadavg)/sizeof(loadavg[0])) < 0))
       {
         TBSYS_LOG(WARN,"getloadavg failed");
         loadavg[0] = 0;

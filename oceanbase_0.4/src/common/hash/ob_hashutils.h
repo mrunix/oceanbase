@@ -393,7 +393,7 @@ namespace oceanbase
         public:
           explicit NullIniter(NLock &nlock)
           {
-            NLock *usr = NULL;
+            NLock * __attribute__((unused)) usr = NULL;
             usr = &nlock;
           };
         private:
@@ -407,13 +407,13 @@ namespace oceanbase
         public:
           explicit NullLocker(pthread_mutex_t &mutex)
           {
-            pthread_mutex_t *usr = NULL;
+            pthread_mutex_t * __attribute__((unused)) usr = NULL;
             usr = &mutex;
             //HASH_WRITE_LOG(HASH_DEBUG, "nulllocker lock succ mutex=%p", &mutex);
           };
           explicit NullLocker(NLock &nlock)
           {
-            NLock *usr = NULL;
+            NLock * __attribute__((unused)) usr = NULL;
             usr = &nlock;
             //HASH_WRITE_LOG(HASH_DEBUG, "nulllocker lock succ nlock=%p", &nlock);
           };
@@ -1138,7 +1138,7 @@ namespace oceanbase
       template <class T>
       struct NodeNumTraits<false, T>
       {
-        static const int32_t NODE_NUM = (common::OB_TC_MALLOC_BLOCK_SIZE - 24/*=sizeof(SimpleAllocerBlock 's members except nodes_buffer)*/ - 128/*for robust*/)/(32/*sizeof(SimpleAllocerNode's members except data)*/+sizeof(T));
+        static const int32_t NODE_NUM = (int32_t)((common::OB_TC_MALLOC_BLOCK_SIZE - 24/*=sizeof(SimpleAllocerBlock 's members except nodes_buffer)*/ - 128/*for robust*/)/(32/*sizeof(SimpleAllocerNode's members except data)*/+sizeof(T)));
       };
 
       template <class T>

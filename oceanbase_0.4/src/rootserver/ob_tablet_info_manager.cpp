@@ -349,7 +349,8 @@ namespace oceanbase
       static char ob_end_key_buff[OB_MAX_ROW_KEY_LENGTH];
 
       int size = 0;
-      fscanf(stream, "size %d", &size);
+      int __attribute__((unused)) ret;
+      ret = fscanf(stream, "size %d", &size);
       int64_t index = 0;
       int32_t out_index = 0;
       for (int64_t i = 0; i < size; i++)
@@ -357,13 +358,13 @@ namespace oceanbase
         ObTabletInfo tablet_info;
         int border_flag_data = 0;
 
-        fscanf(stream, "index %ld row_count %ld occupy_size %ld crcinfo %lu ",
+        ret = fscanf(stream, "index %ld row_count %ld occupy_size %ld crcinfo %lu ",
             &index, &tablet_info.row_count_, &tablet_info.occupy_size_, &tablet_info.crc_sum_);
         for (int crc_i = 0; crc_i < ObTabletCrcHistoryHelper::MAX_KEEP_HIS_COUNT; crc_i++)
         {
-          fscanf(stream, "%ld %lu ", &crc_helper_[i].version_[crc_i], &crc_helper_[i].crc_sum_[crc_i]);
+          ret = fscanf(stream, "%ld %lu ", &crc_helper_[i].version_[crc_i], &crc_helper_[i].crc_sum_[crc_i]);
         }
-        fscanf(stream, "table_id %ld border_flag %d\n", &tablet_info.range_.table_id_, &border_flag_data);
+        ret = fscanf(stream, "table_id %ld border_flag %d\n", &tablet_info.range_.table_id_, &border_flag_data);
 
         tablet_info.range_.border_flag_.set_data(static_cast<int8_t>(border_flag_data));
 
@@ -373,7 +374,7 @@ namespace oceanbase
         ob_end_key_buff[0] = 0;
 
         int len = 0;
-        fscanf(stream, "start_key %d", &len);
+        ret = fscanf(stream, "start_key %d", &len);
         if (len > 0)
         {
           // @todo from text to rowkey
@@ -381,14 +382,14 @@ namespace oceanbase
         }
 
         len = 0;
-        fscanf(stream, "\nend_key %d", &len);
+        ret = fscanf(stream, "\nend_key %d", &len);
 
         if (len > 0)
         {
           // @todo from text to rowkey
           //fscanf(stream, "%s", end_key_buff);
         }
-        fscanf(stream, "\n");
+        ret = fscanf(stream, "\n");
 
         str_to_hex(start_key_buff, static_cast<int32_t>(strlen(start_key_buff)), ob_start_key_buff, OB_MAX_ROW_KEY_LENGTH);
         str_to_hex(end_key_buff, static_cast<int32_t>(strlen(end_key_buff)), ob_end_key_buff, OB_MAX_ROW_KEY_LENGTH);

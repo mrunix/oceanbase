@@ -155,7 +155,7 @@ namespace oceanbase
         block_tail_ = block_head_;
         block_head_->next_ = NULL;
         block_head_->cur_pos_ = 0;
-        block_head_->block_size_ = DEFAULT_MEM_BLOCK_SIZE - sizeof(MemBlock);
+        block_head_->block_size_ = (int32_t)(DEFAULT_MEM_BLOCK_SIZE - sizeof(MemBlock));
         total_size_ = DEFAULT_MEM_BLOCK_SIZE;
         data_size_  = 0;
       }
@@ -353,7 +353,7 @@ namespace oceanbase
         new_block = static_cast<MemBlock*>(ptr);
         new_block->next_ = NULL;
         new_block->cur_pos_ = 0;
-        new_block->block_size_ = DEFAULT_MEM_BLOCK_SIZE - sizeof(MemBlock);
+        new_block->block_size_ = (int32_t)(DEFAULT_MEM_BLOCK_SIZE - sizeof(MemBlock));
         if (NULL == block_tail_)
         {
           block_tail_ = new_block;

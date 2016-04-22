@@ -159,7 +159,7 @@ ObSCRecordHeader* ObSCRecordHeader::deserialize_and_check(char *data_buf,
     int16_t checksum_result = 0;
     int16_t *p_header_short_array
     = reinterpret_cast<int16_t*>(header);
-    int32_t header_short_array_size
+    size_t header_short_array_size
     = sizeof(ObSCRecordHeader)/sizeof(int16_t);
     pos += sizeof(ObSCRecordHeader);
     decode_int16_in_place(header->magic_);
@@ -216,7 +216,7 @@ ObSCRecordHeader* ObSCRecordHeader::deserialize_and_check(char *data_buf,
     }
     if (OB_SUCCESS == err)
     {
-      for (int32_t int16_idx = 0;
+      for (size_t int16_idx = 0;
           int16_idx < header_short_array_size;
           int16_idx ++)
       {
@@ -1214,8 +1214,8 @@ int oceanbase::chunkserver::ObSCSSTableChecker::check_rowkey_order(const int sst
   const char *cur_block_end_key = reinterpret_cast<char*>(block_index_) +
                                    block_index_->end_key_char_stream_offset_;
   int64_t cur_block_end_key_size = 0;
-  const char * prev_key = NULL;
-  int64_t prev_key_size = 0;
+  const char * __attribute__((unused)) prev_key = NULL;
+  int64_t __attribute__((unused)) prev_key_size = 0;
   int64_t block_size = 0;
   int64_t cur_offset = 0;
   int64_t readed_size = 0;

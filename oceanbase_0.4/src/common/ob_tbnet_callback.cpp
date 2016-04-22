@@ -228,7 +228,7 @@ namespace oceanbase
        *| ob_packet_header_size_ | api_version_ | session_id_ | timeout_ |trace_id_|req_sign_|
        *--------------------------------------------------------------------------------------
        */
-      ob_packet_header_size = sizeof(ob_packet_header_size) + sizeof(int16_t)/* api_version_ */ + sizeof(int64_t) /* session_id_ */ + sizeof(int32_t)/* timeout_ */ + sizeof(uint64_t)/* trace_id_ */ + sizeof(uint64_t) /* req_sign_ */;
+      ob_packet_header_size = (uint16_t)(sizeof(ob_packet_header_size) + sizeof(int16_t)/* api_version_ */ + sizeof(int64_t) /* session_id_ */ + sizeof(int32_t)/* timeout_ */ + sizeof(uint64_t)/* trace_id_ */ + sizeof(uint64_t) /* req_sign_ */);
       header_size = ob_packet_header_size;
 #endif
       packet->set_ob_packet_header_size(ob_packet_header_size);

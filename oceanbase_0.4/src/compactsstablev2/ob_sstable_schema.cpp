@@ -348,7 +348,7 @@ namespace oceanbase
         const uint64_t table_id, int64_t& column_count) const
     {
         int ret = OB_SUCCESS;
-        const ObSSTableSchemaColumnDef* def = NULL;
+        const ObSSTableSchemaColumnDef* __attribute__((unused)) def = NULL;
         bool is_rowkey_column = true;
         def = get_table_schema(table_id, is_rowkey_column, column_count);
         return ret;

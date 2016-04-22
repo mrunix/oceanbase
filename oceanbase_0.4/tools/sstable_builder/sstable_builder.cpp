@@ -478,7 +478,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
       uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-      int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+      int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
       if ((ret = schema_->get_column_groups(schema_table_id_, column_group_ids,
         column_group_num)) != OB_SUCCESS)

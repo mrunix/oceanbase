@@ -68,16 +68,17 @@ namespace oceanbase
     }
     void ObRootMeta2::read_from_hex(FILE* stream)
     {
+      int __attribute__((unused)) ret;
       if (stream != NULL)
       {
-        fscanf(stream, "tablet_info_index %d ", &tablet_info_index_);
+        ret = fscanf(stream, "tablet_info_index %d ", &tablet_info_index_);
       }
       for (int32_t i = 0; i < common::OB_SAFE_COPY_COUNT; i++)
       {
-        fscanf(stream, "server_info_index %d tablet_version %ld ",
+        ret = fscanf(stream, "server_info_index %d tablet_version %ld ",
             &server_info_indexes_[i], &tablet_version_[i]);
       }
-      fscanf(stream, "last_dead_server_time %ld\n", &last_dead_server_time_);
+      ret = fscanf(stream, "last_dead_server_time %ld\n", &last_dead_server_time_);
       return;
     }
     DEFINE_SERIALIZE(ObRootMeta2)

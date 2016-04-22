@@ -201,7 +201,7 @@ int UpsMon::set_sync_limit()
   int ret = OB_SUCCESS;
 
   static const int32_t MY_VERSION = 1;
-  const int buff_size = sizeof(ObPacket) + 32;
+  const size_t buff_size = sizeof(ObPacket) + 32;
   char buff[buff_size];
   ObDataBuffer data_buff(buff, buff_size);
   ObBaseClient client;
@@ -265,7 +265,7 @@ int UpsMon::set_new_vip()
   int ret = OB_SUCCESS;
 
   static const int32_t MY_VERSION = 1;
-  const int buff_size = sizeof(ObPacket) + 32;
+  const size_t buff_size = sizeof(ObPacket) + 32;
   char buff[buff_size];
   ObDataBuffer data_buff(buff, buff_size);
   ObBaseClient client;
@@ -329,7 +329,7 @@ int UpsMon::ping_ups()
   int ret = OB_SUCCESS;
 
   static const int32_t MY_VERSION = 1;
-  const int buff_size = sizeof(ObPacket);
+  const size_t buff_size = sizeof(ObPacket);
   char buff[buff_size];
   ObDataBuffer data_buff(buff, buff_size);
   ObBaseClient client;

@@ -190,12 +190,13 @@ namespace oceanbase
 
       class StoreHandle
       {
-        enum
-        {
-          FREE = 0,
-          STORED = 1,
-          LOCKED = 2,
-        };
+        public:
+          enum
+          {
+            FREE = 0,
+            STORED = 1,
+            LOCKED = 2,
+          };
         public:
           StoreHandle() : seq_num(0), kv_pos(0), stat(FREE), mem_block(NULL), mb_infos_pos(0)
           {

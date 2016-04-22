@@ -236,7 +236,7 @@ void PriorityPacketQueueThread::run(tbsys::CThread *, void *)
   {
     for (int64_t priority = NORMAL_PRIV; priority <= LOW_PRIV; ++priority)
     {
-      bool ret = true;
+      bool __attribute__((unused)) ret = true;
       _cond[priority].lock();
       while (_queues[priority].size() > 0) {
         packet = _queues[priority].pop();

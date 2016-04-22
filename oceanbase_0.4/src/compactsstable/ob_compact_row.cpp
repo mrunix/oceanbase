@@ -822,7 +822,7 @@ namespace oceanbase
       }
       else
       {
-        int32_t key_size = get_key_columns_len(key_col_nums);
+        int64_t key_size = get_key_columns_len(key_col_nums);
         if (key_size < 0 || (key_size + pos) > buf_len)
         {
           ret = OB_SIZE_OVERFLOW;
@@ -864,8 +864,8 @@ namespace oceanbase
       }
       else
       {
-        int32_t key_size = get_key_columns_len(key_col_nums);
-        int32_t data_size = buf_pos_ - key_size;
+        int64_t key_size = get_key_columns_len(key_col_nums);
+        int64_t data_size = buf_pos_ - key_size;
         if (key_size < 0 || data_size <= 0 || (pos + data_size) > buf_len)
         {
           ret = OB_SIZE_OVERFLOW;

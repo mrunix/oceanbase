@@ -49,7 +49,7 @@ namespace oceanbase
       if (OB_SUCCESS == ret)
       {
         int64_t dio_type = chunk_server.get_config().write_sstable_use_dio;
-        bool dio = false;
+        bool __attribute__((unused)) dio = false;
         if (dio_type > 0)
         {
           dio = true;

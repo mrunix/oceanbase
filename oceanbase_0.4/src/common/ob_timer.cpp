@@ -81,7 +81,7 @@ namespace oceanbase
 
     int ObTimer::insert_token(const Token& token)
     {
-      int ret = OB_ERROR;
+      int __attribute__((unused)) ret = OB_ERROR;
       if (tasks_num_ >= MAX_TASK_NUM)
       {
         ret = OB_ERROR;

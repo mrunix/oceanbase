@@ -1780,8 +1780,8 @@ int SstableDistDumper::load_root_table(common::ObString& table_name, const uint6
       int64_t ip = 0;
       int64_t port = 0;
       int64_t version = 0;
-      int64_t occupy_size = 0;
-      int64_t record_count = 0;
+      int64_t __attribute__((unused)) occupy_size = 0;
+      int64_t __attribute__((unused)) record_count = 0;
       int32_t cs = 0;
       for(ObScannerIterator it = scanner.begin();
           it != scanner.end() && OB_SUCCESS == ret;  ++it)
@@ -2695,7 +2695,7 @@ int main(const int argc, char *argv[])
 
   ObServer chunk_server;
 
-  memset(g_config_file_name, OB_MAX_FILE_NAME_LENGTH, 0);
+  memset(g_config_file_name, 0, OB_MAX_FILE_NAME_LENGTH);
 
   while((ret = getopt(argc,argv,"s:p:i:f:qt:")) != -1)
   {

@@ -432,7 +432,7 @@ namespace oceanbase
       }
       else
       {
-        bool is_new_row = false;
+        bool __attribute__((unused)) is_new_row = false;
         total_row_counter++;
         if (NULL == (cur_value = table_engine_.get(cur_key)))
         {

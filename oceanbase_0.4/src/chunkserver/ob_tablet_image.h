@@ -445,7 +445,7 @@ namespace oceanbase
         }
         inline int prepare_for_service()
         {
-          return initialize_service_index();
+          return (int)(initialize_service_index());
         }
 
         int serialize(const int32_t index, const int32_t disk_no, char* buf, const int64_t buf_len, int64_t &pos);

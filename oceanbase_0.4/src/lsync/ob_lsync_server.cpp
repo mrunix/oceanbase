@@ -390,7 +390,7 @@ namespace oceanbase
     int ObLsyncServer::handleRequestMayNeedRetry(easy_request_t* req, const uint32_t channel_id, int packet_code, ObDataBuffer* buf, int64_t timeout)
     {
       int err = OB_SUCCESS;
-      uint64_t id = 0;
+      uint64_t __attribute__((unused)) id = 0;
       easy_connection_t* conn = req->ms->c;
       id = convert_addr_to_server(conn->addr);
 

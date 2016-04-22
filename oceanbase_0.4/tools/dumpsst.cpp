@@ -874,7 +874,7 @@ int DumpSSTable::compare_block(
   int64_t dst_base_size = 0;
   uint64_t dst_data_checksum = 0;
   ObSSTableBlockReader src_block_reader, dst_block_reader;
-  int64_t pos = 0;
+  int64_t __attribute__((unused)) pos = 0;
 
   if(OB_SUCCESS == ret)
   {
@@ -1471,9 +1471,9 @@ void DumpSSTable::dump_another_sstable(const char * file_dir_,const char *compre
   char dest_file_[1000];
   char src_compressor_[1000];
   ObString compressor_name_;
-  snprintf(dest_file_,sizeof(dest_file_), file_dir_);
+  snprintf(dest_file_, sizeof(dest_file_), "%s", file_dir_);
   sstable_file_name_.assign(dest_file_,static_cast<int32_t>(strlen(dest_file_)));
-  snprintf(src_compressor_,sizeof(src_compressor_),compressor_);
+  snprintf(src_compressor_, sizeof(src_compressor_), "%s", compressor_);
   compressor_name_.assign(src_compressor_,static_cast<int32_t>(strlen(src_compressor_)));
   //create sstable writer
   ret = writer_.create_sstable(*reader_.get_schema(), sstable_file_name_,compressor_name_ ,2);

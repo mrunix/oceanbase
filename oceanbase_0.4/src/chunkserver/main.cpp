@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
   ob_init_memory_pool();
   //easy_pool_set_allocator(ob_malloc);
   ObChunkServerMain* cm = ObChunkServerMain::get_instance();
-  int ret = OB_SUCCESS;
+  int __attribute__((unused)) ret = OB_SUCCESS;
   if (NULL == cm)
   {
     fprintf(stderr, "cannot start chunkserver, new ObChunkServerMain failed\n");

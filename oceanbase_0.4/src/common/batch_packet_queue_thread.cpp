@@ -192,7 +192,7 @@ void BatchPacketQueueThread::run(tbsys::CThread *, void *) {
             _pushcond.unlock();
         }
 
-        bool ret = true;
+        bool __attribute__((unused)) ret = true;
         if (_handler && batch_num > 0) 
         {
           for (int64_t i = 0;i < batch_num; ++i)
@@ -211,7 +211,7 @@ void BatchPacketQueueThread::run(tbsys::CThread *, void *) {
         // }
     }
     if (_waitFinish) { // 把queue中所有的task做完
-        bool ret = true;
+        bool __attribute__((unused)) ret = true;
         _cond.lock();
         while (_queue.size() > 0) {
             tmp_packet = (ObPacket*) _queue.pop();

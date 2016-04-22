@@ -200,7 +200,7 @@ int ObServerConfig::add_extra_config(const char* config_str, bool check_name /* 
 
 DEFINE_SERIALIZE(ObServerConfig)
 {
-  static const int HEADER_LENGTH = sizeof (uint32_t) + sizeof (uint64_t);
+  static const int HEADER_LENGTH = (int)(sizeof (uint32_t) + sizeof (uint64_t));
   const int64_t pos_beg = pos;
   char * const p_hash = buf + pos_beg;
   char * const p_length = buf + pos_beg + sizeof (uint32_t);

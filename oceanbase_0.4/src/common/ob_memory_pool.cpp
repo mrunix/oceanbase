@@ -55,7 +55,7 @@ namespace
   void init_mem_block_info(MemBlockInfo &info,
                            const int64_t block_size, const int32_t ref_num)
   {
-    oceanbase::common::ObDLink *link = NULL;
+    oceanbase::common::ObDLink * __attribute__((unused)) link = NULL;
     link = new(&(info.block_link_))oceanbase::common::ObDLink;
     info.block_size_ = block_size;
     info.magic_ = OB_MEMPOOL_MAGIC;
@@ -295,7 +295,7 @@ void oceanbase::common::ObBaseMemPool::free(const void *ptr)
 
 void oceanbase::common::ObFixedMemPool::property_initializer()
 {
-  oceanbase::common::ObDLink *link = NULL;
+  oceanbase::common::ObDLink * __attribute__((unused)) link = NULL;
   link = new(&used_mem_block_list_)oceanbase::common::ObDLink;
   link = new(&free_mem_block_list_)oceanbase::common::ObDLink;
   mem_block_size_ = 0;
@@ -707,7 +707,7 @@ int64_t oceanbase::common::ObFixedMemPool::shrink(const int64_t remain_memory_si
 
 oceanbase::common::ObVarMemPool::ObVarMemPool(const int64_t block_size)
 {
-  oceanbase::common::ObDLink *link = NULL;
+  oceanbase::common::ObDLink * __attribute__((unused)) link = NULL;
   link = new(&used_mem_block_list_)oceanbase::common::ObDLink;
   link = new(&free_mem_block_list_)oceanbase::common::ObDLink;
   used_mem_block_num_ = 0;

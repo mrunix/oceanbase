@@ -3224,7 +3224,7 @@ bool ObTransformer::parse_join_info(const ObString &join_info_str, TableSchema &
   uint64_t table_id_joined = OB_INVALID_ID;
 
   char *s = NULL;
-  int len = 0;
+  int __attribute__((unused))len = 0;
   char *p = NULL;
   str = strndup(join_info_str.ptr(), join_info_str.length());
   s = str;
@@ -3378,7 +3378,7 @@ bool ObTransformer::parse_join_info(const ObString &join_info_str, TableSchema &
     }
   }
 
-  uint64_t ltable_id = OB_INVALID_ID;
+  uint64_t __attribute__((unused))ltable_id = OB_INVALID_ID;
 
   if (parse_ok)
   {

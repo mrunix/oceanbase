@@ -362,7 +362,7 @@ void read_scan_param(const char *fname, const char *section, PageArena<char> &al
   }
 
   ObString table_name;
-  sprintf(buffer, SCAN_TABLE_NAME);
+  sprintf(buffer, "%s", SCAN_TABLE_NAME);
   str = getAndCopyString_(allocer, section, buffer, len);
   table_name.assign_ptr(const_cast<char*>(str), len);
 

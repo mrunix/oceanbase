@@ -398,7 +398,7 @@ namespace oceanbase
       }
 
       uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-      int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+      int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
       if ( (ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
       {
@@ -521,7 +521,7 @@ namespace oceanbase
       }
 
       uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-      int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+      int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
       if ( (ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
       {
@@ -772,7 +772,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
 
       const common::ObColumnSchemaV2* column = NULL;
-      const common::ObColumnSchemaV2* column_end = NULL;
+      const common::ObColumnSchemaV2* __attribute__((unused)) column_end = NULL;
       int64_t column_value = 0;
       int64_t hash_value = 0;
       float float_val = 0.0;
@@ -1003,7 +1003,7 @@ namespace oceanbase
       int ret = OB_SUCCESS;
 
       const common::ObColumnSchemaV2* column = NULL;
-      const common::ObColumnSchemaV2* column_end = NULL;
+      const common::ObColumnSchemaV2* __attribute__((unused)) column_end = NULL;
 
       int64_t column_value = 0;
       int64_t hash_value = 0;

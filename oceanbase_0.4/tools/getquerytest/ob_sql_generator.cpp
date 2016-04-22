@@ -98,7 +98,7 @@ int ObSqlGenerator::make_select_index_table_sql(char *buf, int buf_len, int64_t 
   return ret;
 }
 
-int ObSqlGenerator::make_select_get_table_sql(char *buf, int buf_len, int64_t index_first, int64_t index_last, MYSQL &mysql, int64_t &row_cnt)
+int ObSqlGenerator::make_select_get_table_sql(char *buf, int buf_len, int64_t __attribute__((unused)) index_first, int64_t __attribute__((unused)) index_last, MYSQL &mysql, int64_t &row_cnt)
 {
   int ret = 0;
   int64_t pos = 0;
@@ -160,7 +160,7 @@ int ObSqlGenerator::verify(int64_t index_first, int64_t index_last, MYSQL &mysql
     }
     row_cnt++;
     int64_t rowkey = atoll(row[0]);
-    int64_t rowkey2 = atoll(row[1]);
+    int64_t __attribute__((unused)) rowkey2 = atoll(row[1]);
     int64_t index = atoll(row[2]);
     int64_t c1 = atoll(row[3]);
     int64_t c2 = atoll(row[4]);

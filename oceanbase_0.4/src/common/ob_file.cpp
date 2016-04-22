@@ -1657,7 +1657,7 @@ namespace oceanbase
         }
         else
         {
-          ftruncate(fd_, file_pos_);
+          int __attribute__((unused)) ret = ftruncate(fd_, file_pos_);
           ::close(fd_);
         }
         fd_ = -1;

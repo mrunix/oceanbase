@@ -3580,7 +3580,7 @@ namespace oceanbase
       if (!join_info_strs.empty())
       {
         char *s = NULL;
-        int len = 0;
+        int __attribute__((unused)) len = 0;
         char *p = NULL;
         for(vector<const char*>::iterator it = join_info_strs.begin();
             parse_ok && it != join_info_strs.end(); ++it)
@@ -3719,13 +3719,13 @@ namespace oceanbase
             }
           }
 
-          uint64_t ltable_id = OB_INVALID_ID;
+          uint64_t __attribute__((unused)) ltable_id = OB_INVALID_ID;
 
           if (parse_ok)
           {
             ltable_id = schema.get_table_id();
-            uint64_t lid = OB_INVALID_ID;
-            uint64_t rid = OB_INVALID_ID;
+            uint64_t __attribute__((unused)) lid = OB_INVALID_ID;
+            uint64_t __attribute__((unused)) rid = OB_INVALID_ID;
             char *fp = NULL;
             for(uint32_t i = 0; parse_ok && i < node_list.size(); ++i)
             {
@@ -3745,8 +3745,8 @@ namespace oceanbase
               int32_t l_column_index[OB_MAX_COLUMN_GROUP_NUMBER];
               int32_t r_column_index[OB_MAX_COLUMN_GROUP_NUMBER];
 
-              int32_t l_column_size = sizeof(l_column_index) / sizeof(l_column_index[0]);
-              int32_t r_column_size = sizeof(r_column_index) / sizeof(r_column_index[0]);
+              int32_t l_column_size = (int32_t)(sizeof(l_column_index) / sizeof(l_column_index[0]));
+              int32_t r_column_size = (int32_t)(sizeof(r_column_index) / sizeof(r_column_index[0]));
 
               get_column_index(schema.get_table_name(), node_list[i], l_column_index, l_column_size);
               get_column_index(table_joined->get_table_name(), fp, r_column_index, r_column_size);

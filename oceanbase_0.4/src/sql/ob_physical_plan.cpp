@@ -175,7 +175,7 @@ int ObPhysicalPlan::remove_phy_query(int32_t index)
 
 bool ObPhysicalPlan::is_terminate(int &ret) const
 {
-  bool bret = false;
+  bool __attribute__((unused))bret = false;
   if (NULL != my_result_set_)
   {
     ObSQLSessionInfo *session = my_result_set_->get_session();

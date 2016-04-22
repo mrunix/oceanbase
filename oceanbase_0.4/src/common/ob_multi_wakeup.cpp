@@ -272,7 +272,7 @@ namespace oceanbase
       else
       {
         char write_buffer[PIPE_BUF_WRITE_SIZE];
-        write(write_fd, write_buffer, PIPE_BUF_WRITE_SIZE);
+        ssize_t __attribute__((unused)) ret = write(write_fd, write_buffer, PIPE_BUF_WRITE_SIZE);
         //TBSYS_LOG(DEBUG, "write ret=%d errno=%u", write_ret, errno);
       }
       return ret;
@@ -309,7 +309,7 @@ namespace oceanbase
           {
             for (int i = 0; i < event_num; i++)
             {
-              read(events[i].data.fd, read_buffer, PIPE_BUF_READ_SIZE);
+              ssize_t __attribute__((unused)) ret = read(events[i].data.fd, read_buffer, PIPE_BUF_READ_SIZE);
               //TBSYS_LOG(DEBUG, "read ret=%d errno=%u", read_ret, errno);
             }
             break;

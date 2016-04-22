@@ -82,7 +82,7 @@ namespace oceanbase
     {
       uint64_t log_file_id;
       uint64_t log_seq_id;
-      ObLogSyncPoint(){}
+      ObLogSyncPoint(): log_file_id(0), log_seq_id(0) {}
       ObLogSyncPoint(ObLogSyncPoint& sync_point) : ObLsyncPacket()
       {
         log_file_id = sync_point.log_file_id;

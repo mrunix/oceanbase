@@ -50,13 +50,13 @@ namespace oceanbase
       else
       {
         if((val = get_lsync_config(DEV_NAME)))
-          set_dev_name(_strncpy(dev_name_buf_, val, ARRAYSIZEOF(dev_name_buf_)));
+          set_dev_name(_strncpy(dev_name_buf_, val, (int)(ARRAYSIZEOF(dev_name_buf_))));
         if((val = get_lsync_config(PORT)))
           set_port(atoi(val));
         if((val = get_lsync_config(CONVERT_SWITCH_LOG)))
           set_convert_switch_log(atoi(val));
         if((val = get_lsync_config(COMMIT_LOG_DIR)))
-          set_commit_log_dir(_strncpy(commit_log_dir_buf_, val, ARRAYSIZEOF(commit_log_dir_buf_)));
+          set_commit_log_dir(_strncpy(commit_log_dir_buf_, val, (int)(ARRAYSIZEOF(commit_log_dir_buf_))));
         if((val = get_lsync_config(LOG_FILE_START_ID)))
           set_log_file_start_id(atol(val));
         if((val = get_lsync_config(TIMEOUT)))

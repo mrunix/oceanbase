@@ -764,7 +764,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
 
-      int32_t size = get_column_count();
+      int32_t size = (int32_t)get_column_count();
       // copy object for modify (ROWKEY column group id);
       ObSSTableSchemaColumnDef column_def = def;
       if (column_def.rowkey_seq_ != 0)
@@ -1447,7 +1447,7 @@ namespace oceanbase
     DEFINE_GET_SERIALIZE_SIZE(ObSSTableSchema)
     {
       int64_t total_size  = 0;
-      int32_t column_count = get_column_count();
+      int32_t column_count = (int32_t)get_column_count();
 
       total_size += schema_header_.get_serialize_size();
       total_size += column_def_[0].get_serialize_size() * column_count;

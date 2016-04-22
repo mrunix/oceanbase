@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv)
 {
-  int ret = 0;
+  int __attribute__((unused)) ret = 0;
   char* buffer = NULL;
   int pos = 0;
   const char* output = NULL;

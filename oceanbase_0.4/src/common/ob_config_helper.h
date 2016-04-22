@@ -209,7 +209,7 @@ namespace oceanbase
       public:
         ObConfigStringKey()
         {
-          memset(str_, sizeof (str_), 0);
+          memset(str_, 0, sizeof (str_));
         }
         ObConfigStringKey(const char* str)
         {

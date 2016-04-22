@@ -473,7 +473,7 @@ X'([0-9A-F]{2})+'|0X([0-9A-F]{2})+ {
 Date{whitespace}?'[0-9]{4}(-[0-9]{2}){2}' {
   int year, month, day;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -506,7 +506,7 @@ Date{whitespace}?'[0-9]{4}(-[0-9]{2}){2}' {
 Time{whitespace}?'[0-9]{2}(:[0-9]{2}){2}[.][0-9]{1,6}' {
   int hour, minute, second, micro_sec;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -539,7 +539,7 @@ Time{whitespace}?'[0-9]{2}(:[0-9]{2}){2}[.][0-9]{1,6}' {
 Time{whitespace}?'[0-9]{2}(:[0-9]{2}){2}[.]?' {
   int hour, minute, second;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -573,7 +573,7 @@ Time{whitespace}?'[0-9]{2}(:[0-9]{2}){2}[.]?' {
 Timestamp{whitespace}?'[0-9]{4}(-[0-9]{2}){2}[ ][0-9]{2}(:[0-9]{2}){2}[.][0-9]{1,6}' {
   int year, month, day, hour, minute, second, micro_sec;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;
@@ -607,7 +607,7 @@ Timestamp{whitespace}?'[0-9]{4}(-[0-9]{2}){2}[ ][0-9]{2}(:[0-9]{2}){2}[.][0-9]{1
 Timestamp{whitespace}?'[0-9]{4}(-[0-9]{2}){2}[ ][0-9]{2}(:[0-9]{2}){2}[.]?' {
   int year, month, day, hour, minute, second;
   struct  tm time;
-  int ret = 0;
+  int __attribute__((unused))ret = 0;
 
   /* ParseNode* node = new_node(((ParseResult*)yyextra)->malloc_pool_, T_DATE, 0); */
   ParseNode* node = NULL;

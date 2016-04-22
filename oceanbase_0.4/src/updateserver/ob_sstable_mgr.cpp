@@ -1268,7 +1268,7 @@ namespace oceanbase
       }
       else
       {
-        SSTableID slave_start = min_sstable_id;
+        SSTableID __attribute__((unused)) slave_start = min_sstable_id;
         SSTableID slave_end = max_sstable_id;
         SSTableID master_start = get_min_sstable_id();
         SSTableID master_end = get_max_sstable_id();

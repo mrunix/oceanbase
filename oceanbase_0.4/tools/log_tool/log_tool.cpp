@@ -385,7 +385,7 @@ static int is_clog_file(const struct dirent* a)
 
 int64_t calc_new_file_num_to_add(const char* dir, int64_t du_percent, int64_t file_size)
 {
-  int err = OB_SUCCESS;
+  int __attribute__((unused)) err = OB_SUCCESS;
   struct statfs fsst;
   int64_t num_file_to_add = 0;
   if (NULL == dir || du_percent < 0 || du_percent > 100)

@@ -139,7 +139,7 @@ namespace oceanbase
         int64_t get_alloc_size() const { return allocated_; }
         void* alloc(const int64_t size)
         {
-          int err = OB_SUCCESS;
+          int __attribute__((unused)) err = OB_SUCCESS;
           void* p = NULL;
           if (NULL == (p = Allocator::alloc(size)))
           {

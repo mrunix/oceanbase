@@ -266,7 +266,7 @@ namespace oceanbase
     int ObSSTableBlockBuilder::add_row(const ObSSTableRow &row, uint64_t &row_checksum, const int64_t row_serialize_size) 
     {
       int ret             = OB_SUCCESS;
-      int32_t row_offset  = get_block_data_size();
+      int32_t row_offset  = (int32_t)get_block_data_size();
       int64_t row_size    = row_serialize_size > 0 ? row_serialize_size : row.get_serialize_size();
       int64_t block_pos   = 0;
       int64_t index_pos   = 0;
@@ -334,7 +334,7 @@ namespace oceanbase
         const ObRow &row, const int64_t row_serialize_size) 
     {
       int ret             = OB_SUCCESS;
-      int32_t row_offset  = get_block_data_size();
+      int32_t row_offset  = (int32_t)get_block_data_size();
       int64_t row_size    = row_serialize_size;
       int64_t block_pos   = 0;
       int64_t index_pos   = 0;
@@ -398,7 +398,7 @@ namespace oceanbase
     int ObSSTableBlockBuilder::build_block() 
     {
       int ret               = OB_SUCCESS;
-      int32_t row_offset    = get_block_data_size();
+      int32_t row_offset    = (int32_t)get_block_data_size();
       int64_t index_remain  = get_row_index_remain() - ROW_INDEX_ITEM_SIZE;
       int64_t block_remain  = get_block_data_remain() - ROW_INDEX_ITEM_SIZE;
       int64_t block_pos     = 0;
@@ -434,7 +434,7 @@ namespace oceanbase
       if (OB_SUCCESS == ret)
       {
         // serialize block header
-        block_header_.row_index_array_offset_ = get_block_data_size();
+        block_header_.row_index_array_offset_ = (int32_t)get_block_data_size();
       }
 
       /**

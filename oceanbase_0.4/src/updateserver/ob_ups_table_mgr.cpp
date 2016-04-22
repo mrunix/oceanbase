@@ -2076,7 +2076,7 @@ namespace oceanbase
     {
       int ret = OB_SUCCESS;
 
-      const CommonSchemaManager* common_schema_mgr = NULL;
+      const CommonSchemaManager* __attribute__((unused)) common_schema_mgr = NULL;
       UpsSchemaMgrGuard guard;
       common_schema_mgr = schema_mgr_.get_schema_mgr(guard);
 

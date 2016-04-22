@@ -2025,8 +2025,9 @@ void ObRootTable2::dump_as_hex(FILE* stream) const
 void ObRootTable2::read_from_hex(FILE* stream)
 {
   int64_t size = 0;
-  fscanf(stream, "root_table_size %ld sorted_count_ %d", &size, &sorted_count_);
-  fscanf(stream, "\n");
+  int __attribute__((unused)) ret;
+  ret = fscanf(stream, "root_table_size %ld sorted_count_ %d", &size, &sorted_count_);
+  ret = fscanf(stream, "\n");
   for (int64_t i = 0 ; i < size; i++)
   {
     data_holder_[i].read_from_hex(stream);

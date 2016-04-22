@@ -824,7 +824,7 @@ namespace oceanbase
         }
         else
         {
-          first_byte |= OB_MAX_INT_1B;
+          first_byte |= (int8_t)OB_MAX_INT_1B;
           if ((uint64_t)val <= OB_MAX_INT_4B)
           {
             if ((uint64_t)val <= OB_MAX_INT_2B)

@@ -46,7 +46,7 @@ int dump_to_file(const char* file, const char* buf, int64_t len)
   {
     err = OB_INVALID_ARGUMENT;
   }
-  else if ((fd = open(file, O_WRONLY | O_CREAT)) < 0)
+  else if ((fd = open(file, O_WRONLY | O_CREAT, 0777)) < 0)
   {
     err = OB_IO_ERROR;
     TBSYS_LOG(ERROR, "open(%s)=>%s", file, strerror(errno));

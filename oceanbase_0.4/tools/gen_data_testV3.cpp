@@ -124,7 +124,7 @@ namespace oceanbase
       else
       {
         uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-        int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+        int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
         if ((ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
         {
@@ -175,7 +175,7 @@ namespace oceanbase
       else
       {
         uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-        int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+        int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
         if ((ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
         {
@@ -226,7 +226,7 @@ namespace oceanbase
       else
       {
         uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-        int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+        int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
         if ((ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
         {
@@ -277,7 +277,7 @@ namespace oceanbase
       else
       {
         uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-        int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+        int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
         if ((ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
         {
@@ -328,7 +328,7 @@ namespace oceanbase
       else
       {
         uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-        int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+        int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
         if ((ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
         {
@@ -384,7 +384,7 @@ namespace oceanbase
        bool set_min = false;
        bool set_max = false;
        uint64_t column_group_ids[OB_MAX_COLUMN_GROUP_NUMBER];
-       int32_t column_group_num = sizeof(column_group_ids) / sizeof(column_group_ids[0]);
+       int32_t column_group_num = (int32_t)(sizeof(column_group_ids) / sizeof(column_group_ids[0]));
 
        if ((ret = schema_mgr_->get_column_groups(table_id_,column_group_ids,column_group_num)) != OB_SUCCESS)
        {

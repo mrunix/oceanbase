@@ -119,7 +119,7 @@ namespace oceanbase
     {
       int32_t ret = 0;
       int32_t low = 0;
-      int32_t high = ARRAYSIZEOF(charset) - 1;
+      int32_t high = (int32_t)(ARRAYSIZEOF(charset) - 1);
       int cret = 0;
       while (low <= high)
       {
@@ -155,7 +155,7 @@ namespace oceanbase
       const char *name = "gbk";
       int32_t ret = 0;
       int32_t low = 0;
-      int32_t high = ARRAYSIZEOF(charsetR) - 1;
+      int32_t high = (int32_t)(ARRAYSIZEOF(charsetR) - 1);
       while (low <= high)
       {
         ret = low + (high - low)/2;

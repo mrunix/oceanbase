@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
   ::mallopt(M_MMAP_THRESHOLD, DEFAULT_MMAP_THRESHOLD);
   ob_init_memory_pool();
   ObProxyServerMain* pm = ObProxyServerMain::get_instance();
-  int ret = OB_SUCCESS;
+  int __attribute__((unused)) ret = OB_SUCCESS;
   if (NULL == pm)
   {
     fprintf(stderr, "cannot start proxy, new ObProxyServerMain failed\n");

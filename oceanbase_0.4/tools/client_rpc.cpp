@@ -421,7 +421,7 @@ int ObClientRpcStub::stop_server(bool restart)
 {
   int ret = OB_SUCCESS;
   const int64_t timeout = timeout_ > 0 ? timeout_ : 10000000;  //10s
-  const int buff_size = sizeof(ObPacket) + 32;
+  const size_t buff_size = sizeof(ObPacket) + 32;
   char buff[buff_size];
   ObDataBuffer msgbuf(buff, buff_size);
   int8_t need_restart = restart ? 1 : 0;

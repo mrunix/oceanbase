@@ -181,7 +181,7 @@ namespace oceanbase
       }
       else if (!e->unlink())
       {
-        ret = false;
+        ret = NULL;
         TBSYS_LOG(ERROR, "failed to remove e=%p", e);
       }
       else

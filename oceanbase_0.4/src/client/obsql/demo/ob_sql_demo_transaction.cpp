@@ -117,7 +117,7 @@ void prepare()
   }
   else
   {
-    int ret = 10;
+    int __attribute__((unused)) ret = 10;
     ret = mysql_ping(mysql);
     //TBSYS_LOG(INFO, "ping ret is %d\n", ret);
     if (mysql_query(mysql, "drop table if exists test_tran"))

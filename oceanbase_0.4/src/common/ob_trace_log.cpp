@@ -80,7 +80,7 @@ namespace oceanbase
     {
       if (NULL != log_level_str)
       {
-        int level_num = sizeof(level_strs_) / sizeof(const char*);
+        int level_num = (int)(sizeof(level_strs_) / sizeof(const char*));
         for (int i = 0; i < level_num; ++i)
         {
           if (0 == strcasecmp(level_strs_[i], log_level_str))

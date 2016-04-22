@@ -546,7 +546,7 @@ int scan_func2(ObDataBuffer& buf, ObScanParam& scan_param, int64_t start_version
     err = OB_INVALID_ARGUMENT;
     TBSYS_LOG(ERROR, "select(table=%s, columns=%s, rowkey=%s)=>%d", table, columns_spec, rowkey_range, err);
   }
-  else if (OB_SUCCESS != (err = split(buf, columns_spec, ", ", ARRAYSIZEOF(columns), n_columns, columns)))
+  else if (OB_SUCCESS != (err = split(buf, columns_spec, ", ", (int)(ARRAYSIZEOF(columns)), n_columns, columns)))
   {
     TBSYS_LOG(ERROR, "split(column_spec=%s)=>%d", columns_spec, err);
   }
